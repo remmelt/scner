@@ -1,12 +1,11 @@
-// src/index.js
-var m = require("mithril")
+const m = require('mithril');
 
-var SceneList = require("./views/SceneList")
-var SceneView = require("./views/Scene")
-var SceneView = require("./views/PeopleList")
+const SceneList = require('./views/SceneList');
+const SceneView = require('./views/Scene');
+const PeopleList = require('./views/PeopleList');
 
-m.route(document.body, "/", {
-    "/": SceneList,
-    "/scene/:id": SceneView,
-    "/people": PeopleList
+m.route(document.body, '/', {
+    '/': SceneList,
+    '/scene/:id': SceneView,
+    '/people': PeopleList
 })

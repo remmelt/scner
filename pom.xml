@@ -92,14 +92,14 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <!-- <mainClass>TODO</mainClass> -->
+                             <mainClass>los.medium.Main</mainClass>
                         </manifest>
                     </archive>
-                    <finalName>java-smapi</finalName>
+                    <finalName>scner</finalName>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
-                    <appendAssemblyId>false</appendAssemblyId>
+<!--                    <appendAssemblyId>false</appendAssemblyId>-->
                 </configuration>
             </plugin>
             <plugin>

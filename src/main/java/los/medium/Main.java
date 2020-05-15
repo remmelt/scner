@@ -2,6 +2,7 @@ package los.medium;
 
 import io.javalin.Javalin;
 import io.javalin.core.JavalinConfig;
+import io.javalin.http.staticfiles.Location;
 import org.eclipse.jetty.http.HttpStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,16 +28,17 @@ public class Main {
         ));
     }
 
-    private static void config(JavalinConfig c) {
+    private static void config(JavalinConfig config) {
 //        c.showJavalinBanner = false;
         // This request logger also prints out the response sent back to the Sonos controller:
-        c.requestLogger((ctx, ms) ->
+        config.requestLogger((ctx, ms) ->
                 log.debug("SOAPAction: {} Status: {} Took: {}\n{}",
                         ctx.header("SOAPAction"),
                         ctx.status(),
                         ms,
                         ctx.resultString())
         );
-        c.addStaticFiles("/static");
+        config.addStaticFiles("fe", Location.EXTERNAL);
+        config.enableCorsForAllOrigins();
     }
 }

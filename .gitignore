@@ -3,3 +3,7 @@ target/
 *swp
 *iml
 tmp/*.json
+fe/node_modules/
+fe/bin/
+fe/media/
+

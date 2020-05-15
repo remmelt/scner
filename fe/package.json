@@ -15,8 +15,8 @@
     "mithril": "^2.0.4"
   },
   "devDependencies": {
-    "@types/mithril": "^2.0.2",
-    "lint": "^0.7.0",
+    "@types/mithril": "^2.0.3",
+    "eslint": "^7.0.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
   }

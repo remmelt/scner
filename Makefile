@@ -1,4 +1,4 @@
-npm := docker run -it --entrypoint npm -v $(shell pwd)/fe:/work -w /work node
+npm := npm
 
 build:
 	@$(npm) run-script build

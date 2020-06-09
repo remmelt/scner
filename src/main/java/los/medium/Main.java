@@ -29,15 +29,16 @@ public class Main {
     }
 
     private static void config(JavalinConfig config) {
-//        c.showJavalinBanner = false;
-        // This request logger also prints out the response sent back to the Sonos controller:
-        config.requestLogger((ctx, ms) ->
-                log.debug("SOAPAction: {} Status: {} Took: {}\n{}",
-                        ctx.header("SOAPAction"),
-                        ctx.status(),
-                        ms,
-                        ctx.resultString())
-        );
+        config.requestLogger((ctx, ms) -> {
+            log.debug("{} {} {} {}",
+                    ctx.method(),
+                    ctx.path(),
+                    ctx.status(),
+                    ms);
+            if (ctx.resultString() != null) {
+                log.debug(ctx.resultString());
+            }
+        });
         config.addStaticFiles("fe", Location.EXTERNAL);
         config.enableCorsForAllOrigins();
     }

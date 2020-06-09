@@ -1,16 +1,19 @@
-var m = require("mithril")
-var Scene = require("../models/Scene")
+const m = require('mithril');
+const Scene = require('../models/Scene');
+const app = require( '../app.js' )
 
 module.exports = {
-    oninit: function(vnode) {Scene.load(vnode.attrs.id)},
-    view: function () {
-        return [
-        m(Menu),
-        m("div.scene", [
-            m("span", Scene.current.name),
-            m("img", {src: "media/" + Scene.current.image, width: '100px'}),
-            m("img", {src: "media/" + Scene.current.thumbs, width: '100px'}),
-        ])
-        ];
-    }
-}
+  oninit: function(vnode) {
+    Scene.load(vnode.attrs.id);
+  },
+
+  view: function() {
+    scene = Scene.current;
+
+    return [
+      m('div.scene', [
+        m('.persons', Scene.current.name)
+      ]),
+    ];
+  },
+};

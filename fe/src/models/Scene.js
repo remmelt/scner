@@ -1,29 +1,29 @@
-var m = require("mithril")
+const m = require('mithril');
 
-var Scene = {
-    list: [],
-    loadList: function() {
-        return m.request({
-            method: "GET",
-            url: "http://localhost:7000/scene",
-            withCredentials: true,
-        })
+const Scene = {
+  list: [],
+  loadList: function() {
+    return m.request({
+      method: 'GET',
+      url: 'http://localhost:7000/scene',
+      withCredentials: true,
+    })
         .then(function(result) {
-            Scene.list = result
-        })
-    },
+          Scene.list = result;
+        });
+  },
 
-    current: {},
-    load: function(id) {
-        return m.request({
-            method: "GET",
-            url: "http://localhost:7000/scene/" + id,
-            withCredentials: true,
-        })
+  current: {},
+  load: function(id) {
+    return m.request({
+      method: 'GET',
+      url: 'http://localhost:7000/scene/' + id,
+      withCredentials: true,
+    })
         .then(function(result) {
-            Scene.current = result
-        })
-    }
-}
+          Scene.current = result;
+        });
+  },
+};
 
-module.exports = Scene
+module.exports = Scene;

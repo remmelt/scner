@@ -11,7 +11,7 @@
         <version.assertj-core>3.15.0</version.assertj-core>
         <version.build-helper-maven-plugin>3.0.0</version.build-helper-maven-plugin>
         <version.immutables>2.8.3</version.immutables>
-        <version.jackson-databind>2.10.5.1</version.jackson-databind>
+        <version.jackson-databind>2.12.6.1</version.jackson-databind>
         <version.java>11</version.java>
         <version.sqlite-jdbc>3.31.1</version.sqlite-jdbc>
         <version.javalin>3.8.0</version.javalin>
